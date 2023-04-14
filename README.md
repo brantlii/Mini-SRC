@@ -1,4 +1,4 @@
-# MINI-SRC
+# Mini-SRC
 Computer Hardware Engineering Project (Simple RISC Computer)
 
 Created by Brant Li, Zuhair Shaikh
