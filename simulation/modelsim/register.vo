@@ -1,0 +1,118 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
+
+// DATE "03/31/2023 00:06:15"
+
+// 
+// Device: Altera 5CEBA4F23C7 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ns/ 1 ps
+
+module datapath (
+	Clock,
+	Reset,
+	Stop);
+input 	Clock;
+input 	Reset;
+input 	Stop;
+
+// Design Ports Information
+// Clock	=>  Location: PIN_D7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Reset	=>  Location: PIN_G8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Stop	=>  Location: PIN_H10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \Clock~input_o ;
+wire \Reset~input_o ;
+wire \Stop~input_o ;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+
+
+// Location: IOIBUF_X10_Y45_N35
+cyclonev_io_ibuf \Clock~input (
+	.i(Clock),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Clock~input_o ));
+// synopsys translate_off
+defparam \Clock~input .bus_hold = "false";
+defparam \Clock~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y45_N52
+cyclonev_io_ibuf \Reset~input (
+	.i(Reset),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Reset~input_o ));
+// synopsys translate_off
+defparam \Reset~input .bus_hold = "false";
+defparam \Reset~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X40_Y45_N92
+cyclonev_io_ibuf \Stop~input (
+	.i(Stop),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Stop~input_o ));
+// synopsys translate_off
+defparam \Stop~input .bus_hold = "false";
+defparam \Stop~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X19_Y3_N0
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule

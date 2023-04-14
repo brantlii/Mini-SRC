@@ -1,0 +1,7 @@
+// Zuhair Shaikh and Brant Lan Li
+// Arithemtic Logic Unit (ALU)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module ALU():

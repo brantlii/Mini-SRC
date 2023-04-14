@@ -1,0 +1,92 @@
+// Zuhair Shaikh and Brant Lan Li
+// AND Testbench (AND)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+`timescale 1ns/10ps
+module jal_tb; // jal
+	reg	Clock, Clear;
+	reg 	PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin;
+	reg 	PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout;
+	reg 	Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC;
+	reg 	CON_In;
+	reg 	[4:0] OP;
+	wire  CON_Out;
+	reg 	GLR;
+
+parameter	Default = 6'b000000;
+parameter   T0 = 6'b000001,   T1 = 6'b000010,   T2 = 6'b000011,   T3 = 6'b000100,   T4 = 6'b000101,   T5 = 6'b000110,   T6 = 6'b000111,   T7 = 6'b001000;  
+parameter   T8 = 6'b001001,   T9 = 6'b001010,   T10 = 6'b001011,  T11 = 6'b001100,  T12 = 6'b001101,  T13 = 6'b001110,  T14 = 6'b001111,  T15 = 6'b010000;  
+parameter   T16 = 6'b010001,  T17 = 6'b010010,  T18 = 6'b010011,  T19 = 6'b010100,  T20 = 6'b010101,  T21 = 6'b010110,  T22 = 6'b010111,  T23 = 6'b011000;
+parameter   T24 = 6'b011001,  T25 = 6'b011010,  T26 = 6'b011011,  T27 = 6'b011100,  T28 = 6'b011101,  T29 = 6'b011110,  T30 = 6'b011111,  T31 = 6'b100000;
+parameter   T32 = 6'b100001,  T33 = 6'b100010,  T34 = 6'b100011,  T35 = 6'b100100,  T36 = 6'b100101,  T37 = 6'b100110,  T38 = 6'b100111,  T39 = 6'b101000;
+parameter   T40 = 6'b101001,  T41 = 6'b101010,  T42 = 6'b101011,  T43 = 6'b101100,  T44 = 6'b101101,  T45 = 6'b101110,  T46 = 6'b101111,  T47 = 6'b110000;
+parameter   T48 = 6'b110001,  T49 = 6'b110010,  T50 = 6'b110011,  T51 = 6'b110100,  T52 = 6'b110101,  T53 = 6'b110110,  T54 = 6'b110111,  T55 = 6'b111000;
+parameter   T56 = 6'b111001,  T57 = 6'b111010,  T58 = 6'b111011,  T59 = 6'b111100,  T60 = 6'b111101,  T61 = 6'b111110,  T62 = 6'b111111;
+
+reg	[5:0] Present_state = Default;
+
+initial Clear = 0;
+
+datapath datapath_instance(
+	Clock, Clear,
+	PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin,
+	PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout,
+	Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC,
+	CON_In, OP, CON_Out, GLR
+	);
+	
+initial 
+	begin
+		datapath_instance.R2.Q = 32'h00000009; // ldi R2, 9
+		datapath_instance.ram_instance.memory[0] = 32'hA9000000; // jal R2
+	
+		Clock = 0;
+		forever #10 Clock = ~ Clock;
+	end
+
+always @(posedge Clock)
+begin
+	case (Present_state)
+		Default      : #30 Present_state = T0;
+		T0           : #30 Present_state = T1;
+		T1           : #30 Present_state = T2;
+		T2           : #30 Present_state = T3;
+		T3           : #30 Present_state = T4;
+		endcase
+end
+
+always @(Present_state)
+begin
+	case (Present_state)
+		Default: begin
+				{PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin} <= 0;
+				{PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout} <= 0;
+				{Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC, GLR} <= 0;
+				CON_In <= 0;
+				OP <= 5'b00000;
+		end
+		T0: begin
+				PCout <= 1; MARin <= 1;
+				#40 PCout <= 0; MARin <= 0;
+		end
+		T1: begin
+				IncPC <= 1; Read <= 1; MDRin <= 1;
+				#40 IncPC <= 0; Read <= 0; MDRin <= 0;
+		end
+		T2: begin
+				MDRout <= 1; IRin <= 1;
+				#40 MDRout <= 0; IRin <= 0;
+		end
+		T3: begin
+				GLR <= 1; PCout <= 1; Rin <= 1;
+				#40 GLR <= 0; PCout <= 0; Rin <= 0;
+		end
+		T4: begin
+				Gra <= 1; Rout <= 1; PCin <= 1;
+				#40 Gra <= 0; Rout <= 0; PCin <= 0;
+		end
+	endcase
+end
+endmodule

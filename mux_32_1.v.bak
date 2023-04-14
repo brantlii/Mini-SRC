@@ -1,0 +1,37 @@
+// Zuhair Shaikh and Brant Lan Li
+// 32 to 1 Multiplexer (32:1 MUX) 
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module mux_32_1 (MuxOut, MuxInR0, MuxInR1, MuxInR2, MuxInR3, MuxInR4, MuxInR5, MuxInR6, MuxInR7,								// 32:1 mulitplexer ports
+						MuxInR8, MuxInR9, MuxInR10, MuxInR11, MuxInR12, MuxInR13, MuxInR14, MuxInR15,
+						MuxInHI, MuxInLO, MuxInZHI, MuxInZLO, MuxInPC, MuxInMDR, MuxInPort, MuxInC, MuxSelect);
+						
+						
+						
+				output wire [31:0] BusMuxOut		// 32:1 mulitplexer wires
+				input wire [31:0] BusMuxInR0; 
+				input wire [31:0] BusMuxInR1;
+				input wire [31:0] BusMuxInR2; 
+				input wire [31:0] BusMuxInR3; 
+				input wire [31:0] BusMuxInR4; 
+				input wire [31:0] BusMuxInR5; 
+				input wire [31:0] BusMuxInR6; 
+				input wire [31:0] BusMuxInR7;								
+				input wire [31:0] BusMuxInR8; 
+				input wire [31:0] BusMuxInR9; 
+				input wire [31:0] BusMuxInR10; 
+				input wire [31:0] BusMuxInR11; 
+				input wire [31:0] BusMuxInR12; 
+				input wire [31:0] BusMuxInR13; 
+				input wire [31:0] BusMuxInR14; 
+				input wire [31:0] BusMuxInR15;
+				input wire [31:0] BusMuxInHI; 
+				input wire [31:0] BusMuxInLO; 
+				input wire [31:0] BuxMuxInZHI; 
+				input wire [31:0] BusMuxInZLO; 
+				input wire [31:0] BusMuxInPC; 
+				input wire [31:0] BusMuxInMDR; 
+				input wire [31:0] BusMuxInPort; 
+				input wire [31:0] BusMuxInC;

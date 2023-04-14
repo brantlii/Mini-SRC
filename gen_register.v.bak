@@ -1,0 +1,22 @@
+// Zuhair Shaikh and Brant Li
+// General Purpose Register (R0 - R15, HI, LO, Y)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module gen_register (D, clk, clr, enable, Q); // ports
+
+	input wire [31:0] D; // port declarations
+	input wire clk;
+	input	wire clr;
+	input wire enable;
+	output reg [31:0] Q;
+	// reg [31:0] Q;
+	
+	always @ (posedge clr, posedge clk) // port logic/functional details
+		if (clr)
+			Q <= 0;
+		else if (enable)
+			Q <= D;
+
+endmodule // end module

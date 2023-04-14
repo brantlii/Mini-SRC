@@ -1,0 +1,77 @@
+// Zuhair Shaikh and Brant Lan Li
+// AND Testbench (AND)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+`timescale 1ns/10ps
+module jr_tb;
+	reg	Clock, Clear;
+	reg 	PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin;
+	reg 	PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout;
+	reg 	Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC;
+	reg 	CON_In;
+	reg 	[4:0] OP;
+	wire  CON_Out;
+	wire [15:0] enable_R;
+	wire [15:0] select_R;
+
+parameter	Default = 4'b0000, T0 = 4'b0001, T1 = 4'b0010, T2 = 4'b0011, T3 = 4'b0100;
+reg	[3:0] Present_state = Default;
+
+initial Clear = 0;
+
+datapath datapath_instance(
+	Clock, Clear,
+	PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin,
+	PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout,
+	Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC,
+	CON_In, OP, CON_Out, enable_R, select_R
+	);
+	
+initial 
+	begin
+		Clock = 0;
+		forever #10 Clock = ~ Clock;
+	end
+
+always @(posedge Clock)
+begin
+	case (Present_state)
+		Default			:	#40 Present_state = T0;
+		T0					:	#40 Present_state = T1;
+		T1					:	#40 Present_state = T2;
+		T2					:	#40 Present_state = T3;
+		endcase
+end
+
+always @(Present_state)
+begin
+	case (Present_state)
+		Default: begin
+				{PCin, IRin, HIin, LOin, ZHighin, ZLowin, MARin, MDRin, OutPort, Yin} <= 0;
+				{PCout, HIout, LOout, ZHighout, ZLowout, InPort, MDRout, Cout} <= 0;
+				{Gra, Grb, Grc, Rin, Rout, BAout, Read, Write, IncPC} <= 0;
+				CON_In <= 0;
+				OP <= 5'b00000;
+				enable_R <= 16'b0; select_R <= 16'b0;
+		end
+		T0: begin
+				#10 PCout <= 1; MARin <= 1; IncPC <= 1;
+				#10 PCout <= 0; MARin <= 0; IncPC <= 0;
+		end
+		T1: begin
+				#10 PCin <= 1; Read <= 1; MDRin <= 1;
+				#10 PCin <= 0; Read <= 0; MDRin <= 0;
+		end
+		T2: begin
+				#10 MDRout <= 1; IRin <= 1;
+				#10 MDRout <= 0; IRin <= 0;
+		end
+		T3: begin
+				#10 Gra <= 1; Rout <= 1; PCin <= 1;
+				#10 Gra <= 0; Rout <= 0; PCin <= 0;
+		end
+	endcase
+end
+endmodule

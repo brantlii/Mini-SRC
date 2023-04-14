@@ -1,0 +1,7 @@
+// Zuhair Shaikh and Brant Lan Li
+// Control Unit Testbench
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+`timescale 1ns/10ps

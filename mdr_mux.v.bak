@@ -1,0 +1,21 @@
+// Zuhair Shaikh and Brant Lan Li
+// Memory Data Register Register MUX (MDR_MUX)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module mdr_register (
+	input wire [31:0] BusMuxOut, MD
+	input wire Read,
+	input wire [31:0] MDAtain,
+	output wire [31:0] Q
+	);
+		
+	always @ (*)
+		begin
+			if (Read == 0)
+				Q <= BusMuxOut;
+			else if (Read == 1)
+				Q <= MDatain;
+		end
+endmodule 

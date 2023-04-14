@@ -1,0 +1,186 @@
+Flow report for register
+Fri Mar 31 14:32:54 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; Flow Summary                                                                           ;
++-------------------------------------+--------------------------------------------------+
+; Flow Status                         ; Successful - Fri Mar 31 14:32:53 2023            ;
+; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                       ; register                                         ;
+; Top-level Entity Name               ; datapath                                         ;
+; Family                              ; Cyclone V                                        ;
+; Device                              ; 5CEBA4F23C7                                      ;
+; Timing Models                       ; Final                                            ;
+; Logic utilization (in ALMs)         ; N/A                                              ;
+; Total registers                     ; 0                                                ;
+; Total pins                          ; 3                                                ;
+; Total virtual pins                  ; 0                                                ;
+; Total block memory bits             ; 0                                                ;
+; Total DSP Blocks                    ; 0                                                ;
+; Total HSSI RX PCSs                  ; 0                                                ;
+; Total HSSI PMA RX Deserializers     ; 0                                                ;
+; Total HSSI PMA RX ATT Deserializers ; 0                                                ;
+; Total HSSI TX PCSs                  ; 0                                                ;
+; Total HSSI PMA TX Serializers       ; 0                                                ;
+; Total HSSI PMA TX ATT Serializers   ; 0                                                ;
+; Total PLLs                          ; 0                                                ;
+; Total DLLs                          ; 0                                                ;
++-------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 03/31/2023 14:32:40 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; register            ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++--------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 26830026780962.168028756017184        ; --            ; --          ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; ld_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; st_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; alui_tb        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; br_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; jr_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; ldi_tb         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; jal_tb         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; mfhi_tb        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; mflo_tb        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; in_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; out_tb         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; cu_tb          ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; cu_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; ld_tb.v                               ; --            ; --          ; ld_tb          ;
+; EDA_TEST_BENCH_FILE                  ; st_tb.v                               ; --            ; --          ; st_tb          ;
+; EDA_TEST_BENCH_FILE                  ; alui_tb.v                             ; --            ; --          ; alui_tb        ;
+; EDA_TEST_BENCH_FILE                  ; br_tb.v                               ; --            ; --          ; br_tb          ;
+; EDA_TEST_BENCH_FILE                  ; jr_tb.v                               ; --            ; --          ; jr_tb          ;
+; EDA_TEST_BENCH_FILE                  ; ldi_tb.v                              ; --            ; --          ; ldi_tb         ;
+; EDA_TEST_BENCH_FILE                  ; jal_tb.v                              ; --            ; --          ; jal_tb         ;
+; EDA_TEST_BENCH_FILE                  ; mfhi_tb.v                             ; --            ; --          ; mfhi_tb        ;
+; EDA_TEST_BENCH_FILE                  ; mflo_tb.v                             ; --            ; --          ; mflo_tb        ;
+; EDA_TEST_BENCH_FILE                  ; in_tb.v                               ; --            ; --          ; in_tb          ;
+; EDA_TEST_BENCH_FILE                  ; out_tb.v                              ; --            ; --          ; out_tb         ;
+; EDA_TEST_BENCH_FILE                  ; cu_tb.v                               ; --            ; --          ; cu_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ld_tb                                 ; --            ; --          ; ld_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; st_tb                                 ; --            ; --          ; st_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; alui_tb                               ; --            ; --          ; alui_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; br_tb                                 ; --            ; --          ; br_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; jr_tb                                 ; --            ; --          ; jr_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ldi_tb                                ; --            ; --          ; ldi_tb         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; jal_tb                                ; --            ; --          ; jal_tb         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; mfhi_tb                               ; --            ; --          ; mfhi_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; mflo_tb                               ; --            ; --          ; mflo_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; in_tb                                 ; --            ; --          ; in_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; out_tb                                ; --            ; --          ; out_tb         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; cu_tb                                 ; --            ; --          ; cu_tb          ;
+; EDA_TEST_BENCH_NAME                  ; ld_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; st_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; alui_tb                               ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; br_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; jr_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; ldi_tb                                ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; jal_tb                                ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; mfhi_tb                               ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; mflo_tb                               ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; in_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; out_tb                                ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; cu_tb                                 ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; ld_tb          ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; st_tb          ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; alui_tb        ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; br_tb          ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; jr_tb          ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; ldi_tb         ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; jal_tb         ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; mfhi_tb        ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; mflo_tb        ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; in_tb          ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                                ; --            ; --          ; out_tb         ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 7600 ns                               ; --            ; --          ; cu_tb          ;
+; EDA_TIME_SCALE                       ; 1 ns                                  ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --             ;
+; PARTITION_COLOR                      ; 16764057                              ; --            ; datapath    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; datapath    ; Top            ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; datapath    ; Top            ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                     ; datapath                              ; register      ; --          ; --             ;
++--------------------------------------+---------------------------------------+---------------+-------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4647 MB             ; 00:00:02                           ;
+; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:02                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; BMH-212-01       ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off CPU -c register
+
+
+

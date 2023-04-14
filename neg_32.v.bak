@@ -1,0 +1,17 @@
+// Zuhair Shaikh and Brant Lan Li
+// NEG Operation (2's Complement, NEG)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module neg_32(
+	input wire [31:0] rA,
+	output wire [31:0] rZ
+	);
+	
+	wire [31:0] cTemp;
+	wire cOut;
+	
+	not_32 not_operation(.rA(rA), .rZ(cTemp));
+	add_32 add_operation(.rA(cTemp), .rB(32'd1), .cIn(1'd0), .S(rZ), .cOut(cOut));
+endmodule 

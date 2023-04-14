@@ -1,0 +1,19 @@
+// Zuhair Shaikh and Brant Lan Li
+// AND Operation (AND)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module and_32(
+	input wire [31:0] rA, rB,
+	output wire [31:0] rZ
+	);
+	
+	genvar i;
+	generate
+		for (i=0; i<32; i=i+1) begin : gen_and
+			assign rZ[i] = (rA[i])&(rB[i]);
+		end
+	endgenerate
+endmodule
+	

@@ -1,0 +1,35 @@
+// Zuhair Shaikh and Brant Lan Li
+// Memory Data Register Register (MDR)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module mdr_register (clr, clk, enable, D, Q, Read, BusMuxOut, MDAtain);
+
+
+	input wire [31:0] BusMuxOut;
+	input wire [31:0] MDAtain;
+	input wire read;
+	input wire [31:0] D;
+	input wire clk;
+	input wire clr;
+	input wire enable;
+	output reg [31:0] Q;
+	
+	always @ (posedge clr, posedge clk) 
+	
+		if (clr)
+		
+			Q <= 0;
+		
+		else if (enable)
+		
+			if (read = 0) 
+				
+				Q <= BusMuxOut;
+				
+			else 
+			
+				Q <= MDAtain;
+				
+endmodule 

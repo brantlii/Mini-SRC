@@ -1,0 +1,7 @@
+// Zuhair Shaikh and Brant Li
+// Program Counter Register (PC)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module pc_register ()

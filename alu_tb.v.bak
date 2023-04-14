@@ -1,0 +1,12 @@
+// Zuhair Shaikh and Brant Lan Li
+// ALU Testbench File 
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module ALU_tb ;
+
+	reg [7:0] input_a; 
+	reg [7:0] input_b;
+	reg [3:0] opcode;
+	

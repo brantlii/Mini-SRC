@@ -1,0 +1,20 @@
+// Zuhair Shaikh and Brant Lan Li
+// RAM (RAM)
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module ram(
+	input wire [31:0] D,
+	input wire [8:0] Address,
+	input wire Clock,
+	input wire Read,
+	input wire Write,
+	output wire [31:0] Q
+	);
+	
+	reg [31:0] Memory [0:511];
+	initial $readmemh("ram.hex", Memory);
+	assign Q = (Write || !Read) ? 32'bZZZZZZZZ : Memory[Address];
+	always @ (posedge Clock) if (Write) Memory[Address] = D;
+endmodule

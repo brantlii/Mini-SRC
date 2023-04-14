@@ -1,0 +1,5 @@
+# Reading C:/altera/13.0sp1/modelsim_ae/tcl/vsim/pref.tcl 
+# do register_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }

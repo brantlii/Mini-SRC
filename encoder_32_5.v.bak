@@ -1,0 +1,94 @@
+// Zuhair Shaikh and Brant Lan Li
+// 32 to 5 Encoder 
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University 
+
+module encoder_32_5 (R0Out, R1Out, R2Out, R3Out, R4Out, R5Out, R6Out, R7Out, R8Out, 
+							R9Out, R10Out, R11Out, R12Out, R13Out, R14Out, R15Out, 				
+							HIOut, LOOut, ZHIOut, ZLOOut, PCOut, MDROut, InPortOut, COut,
+							R24Out, R25Out, R26Out, R27Out, R28Out, R29Out, R30Out, R31Out, select_out);
+							
+				input wire R0Out; 					// 32:5 encoder wires (from control unit)
+				input wire R1Out;
+				input wire R2Out; 
+				input wire R3Out;
+				input wire R4Out; 
+				input wire R5Out; 
+				input wire R6Out; 
+				input wire R7Out; 
+				input wire R8Out; 
+				input wire R9Out; 
+				input wire R10Out; 
+				input wire R11Out; 
+				input wire R12Out; 
+				input wire R13Out; 
+				input wire R14Out; 
+				input wire R15Out; 			
+				input wire HIOut; 
+				input wire LOOut; 
+				input wire ZHIOut; 
+				input wire ZLOOut; 
+				input wire PCOut; 
+				input wire MDROut; 
+				input wire InPortOut; 
+				input wire COut;
+				input wire R24Out; 
+				input wire R25Out; 
+				input wire R26Out; 
+				input wire R27Out; 
+				input wire R28Out; 
+				input wire R29Out; 
+				input wire R30Out; 
+				input wire R31Out; 
+				output wire [4:0] select_out;
+				
+				always @ (*) begin 
+				
+					if 		(R31Out) select_out <= 5'b11111;			// encoder logic 
+					else if 	(R30Out) select_out <= 5'b11110;
+					else if	(R29Out) select_out <= 5'b11101;
+					else if	(R28Out) select_out <= 5'b11100;
+					else if	(R27Out) select_out <= 5'b11011;
+					else if	(R26Out) select_out <= 5'b11101;
+					else if	(R25Out) select_out <= 5'b11001;
+					else if	(R24Out) select_out <= 5'b11000;
+					else if	(Cout) select_out <= 5'b10111;
+					else if	(InPortOut) select_out <= 5'b10110;
+					else if	(MDROut) select_out <= 5'b10101;
+					else if	(PCOut) select_out <= 5'b10100;
+					else if	(ZLOOut) select_out <= 5'b10011;
+					else if	(ZHIOut) select_out <= 5'b10010;
+					else if	(LOOut) select_out <= 5'b10001;
+					else if	(HIOut) select_out <= 5'b10000;
+					else if	(R15Out) select_out <= 5'b01111;
+					else if	(R14Out) select_out <= 5'01111;
+					else if	(R13Out) select_out <= 5'b01101;
+					else if	(R12Out) select_out <= 5'b01100;
+					else if	(R11Out) select_out <= 5'b01011;
+					else if	(R10Out) select_out <= 5'b01010;
+					else if	(R9Out) select_out <= 5'b01001;
+					else if	(R8Out) select_out <= 5'b01000;
+					else if	(R7Out) select_out <= 5'b00111;
+					else if	(R6Out) select_out <= 5'b00110;
+					else if	(R5Out) select_out <= 5'b00101;
+					else if	(R4Out) select_out <= 5'b00100;
+					else if	(R3Out) select_out <= 5'b00011;
+					else if	(R2Out) select_out <= 5'b00010;
+					else if	(R1Out) select_out <= 5'b00001;
+					else if	(R0Out) select_out <= 5'b00000;
+					else select_out <= 5'b00000;
+				
+				end
+endmodule
+
+
+					
+
+
+							
+
+							
+							
+							
+						

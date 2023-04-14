@@ -1,0 +1,21 @@
+// Zuhair Shaikh and Brant Lan Li
+// Select and Encode Logic 
+// ELEC374 - Digital Systems Engineering
+// Department of Electrical and Computer Engineering
+// Queen's University
+
+module select_encode_logic (
+	input wire Gra,
+	input wire Grb,
+	input wire Grc, 
+	input wire Rin,
+	input wire Rout,
+	input wire BAout, 
+	
+
+
+
+
+
+
+);
