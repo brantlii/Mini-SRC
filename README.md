@@ -1,6 +1,7 @@
+# MINI-SRC
 Computer Hardware Engineering Project (Simple RISC Computer)
 
-Created by Zuhair Shaikh and Brant Lan Li
+Created by Brant Li, Zuhair Shaikh
 
 ELEC374 - Digital Systems Engineering
 
